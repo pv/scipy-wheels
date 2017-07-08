@@ -14,7 +14,7 @@ env:
         - secure:
             "fne+dO/N+Zv8pusPVO6S58p7lFWLDIwjXwf/IgBPxGSdDFEQVY8xl0+nGPNNzYZfmX/inBrb/3+8el9sggC+X7KG6mGmCtcpwems2sWn6XY5OQ+kWl8SEdDs2SiAsrieqbC3d1cmMoHyddX/YdGWVSdIji70nRER0j9wjNwYNlE="
         # Daily commit, if present, overrides BUILD_COMMIT
-        - DAILY_COMMIT=3568ecd
+        - DAILY_COMMIT=fix
 
 language: python
 # Default Python version is usually 2.7
@@ -109,6 +109,7 @@ before_install:
           CONTAINER="pre-release";
           BUILD_COMMIT=$DAILY_COMMIT;
       fi
+    - (cd scipy && git fetch origin pull/7552/head:fix)
     - BUILD_DEPENDS="$NP_BUILD_DEP Cython"
     - TEST_DEPENDS="$NP_TEST_DEP nose"
     - source multibuild/common_utils.sh
