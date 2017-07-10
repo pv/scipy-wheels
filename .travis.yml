@@ -109,7 +109,7 @@ before_install:
           CONTAINER="pre-release";
           BUILD_COMMIT=$DAILY_COMMIT;
       fi
-    - (cd scipy && git fetch origin pull/7552/head:fix)
+    - (cd scipy && git fetch origin pull/7581/head:fix)
     - BUILD_DEPENDS="$NP_BUILD_DEP Cython"
     - TEST_DEPENDS="$NP_TEST_DEP nose"
     - source multibuild/common_utils.sh
